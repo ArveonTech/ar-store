@@ -1,7 +1,11 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import HomePage from "./pages/home-pages";
+import HomePage from "./pages/home-page";
 import GuestRoute from "./utils/auth/guest-route";
+import LoginPage from "./pages/login-page";
+import ProtectedRoute from "./utils/auth/protected-route";
+import AppPage from "./pages/app-page";
+import NotFoundPage from "./pages/not-found-page";
 
 const queryClient = new QueryClient();
 
@@ -13,6 +17,26 @@ const router = createBrowserRouter([
         <HomePage />
       </GuestRoute>
     ),
+  },
+  {
+    path: "/login",
+    element: (
+      <GuestRoute>
+        <LoginPage />
+      </GuestRoute>
+    ),
+  },
+  {
+    path: "/app",
+    element: (
+      <ProtectedRoute>
+        <AppPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "*",
+    element: <NotFoundPage />,
   },
 ]);
 

@@ -28,7 +28,7 @@ const FooterComponent = () => {
             </h2>
 
             <div className="space-y-2 pt-4">
-              <p className="text-xs ">OR EMAIL US AT</p>
+              <p className="text-xs ">OR Username US AT</p>
               <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm">
                 <Mail size={14} />
                 <p>ahdarizqi3@gmail.com</p>
