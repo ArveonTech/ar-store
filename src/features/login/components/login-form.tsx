@@ -46,7 +46,6 @@ const LoginFormComponent = () => {
 
   const errorForm = isErrorCredentials ? "Login failed" : null;
 
-  console.info(dataCredentials);
   useEffect(() => {
     if (!accessToken || isErrorCredentials) return;
 

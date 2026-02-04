@@ -23,11 +23,11 @@ const useParamsControllers = () => {
     return searchParams;
   };
 
-  const setManyParam = (obj: Record<string, string | null>) => {
+  const setManyParam = (obj: Record<string, string | null | undefined>) => {
     const newParams = new URLSearchParams(searchParams);
 
     for (const [key, value] of Object.entries(obj)) {
-      if (value === null || value === "") {
+      if (value == null || value === "") {
         newParams.delete(key);
       } else {
         newParams.set(key, value);

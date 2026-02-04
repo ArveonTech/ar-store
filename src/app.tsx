@@ -6,6 +6,7 @@ import LoginPage from "./pages/login-page";
 import ProtectedRoute from "./utils/auth/protected-route";
 import AppPage from "./pages/app-page";
 import NotFoundPage from "./pages/not-found-page";
+import ProductPage from "./pages/products-page";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,14 @@ const router = createBrowserRouter([
     element: (
       <ProtectedRoute>
         <AppPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/products",
+    element: (
+      <ProtectedRoute>
+        <ProductPage />
       </ProtectedRoute>
     ),
   },

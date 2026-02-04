@@ -2,22 +2,27 @@ import { apiRequest } from "@/services/auth/api-request";
 import { type ProductsResponse } from "@/types/types";
 import { useQuery } from "@tanstack/react-query";
 
-interface PropsUseGetUser {
+interface QueryFilter {
   limit: number;
   skip: number;
+  search: string;
+}
+
+interface PropsUseGetUser {
+  query: QueryFilter;
   accessToken: string | null;
 }
 
-const useGetProducts = ({ limit, skip, accessToken }: PropsUseGetUser) => {
+const useGetProducts = ({ query, accessToken }: PropsUseGetUser) => {
   return useQuery<ProductsResponse>({
-    queryKey: ["get-products"],
+    queryKey: ["get-products",query],
     retry: 0,
     queryFn: () => {
       return apiRequest(
         "GET",
-        "products",
+        "products/search",
         null,
-        `limit=${limit}&skip=${skip}`,
+        `q=${query.search}&limit=${query.limit}&skip=${query.skip}`,
         {
           headers: {
             "Content-Type": "application/json",
