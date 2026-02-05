@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 interface PropsError {
-  classname: React.React.ComponentProps<"div">;
+  classname?: string;
 }
 
 const ErrorComponent = ({ classname }: PropsError) => {

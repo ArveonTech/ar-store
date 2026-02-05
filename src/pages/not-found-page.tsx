@@ -8,7 +8,7 @@ const NotFoundPage = () => {
       <h1 className="text-6xl font-bold text-foreground">404</h1>
       <p className="text-lg text-foreground mt-2">Oops! Page not found 😢</p>
       <button
-        onClick={() => navigate("/")}
+        onClick={() => navigate("/app")}
         className="mt-6 px-4 py-2 bg-primary text-white rounded-lg hover:bg-bgHighlight transition-all cursor-pointer"
       >
         Back to Home

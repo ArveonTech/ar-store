@@ -1,18 +1,19 @@
 import useParamsControllers from "@/utils/others/use-get-params-controllers";
 
 const useFilter = () => {
-  const { getAllParam, setManyParam } = useParamsControllers();
+  const { setManyParam } = useParamsControllers();
 
   const setSearchInputParam = ({
     debounceValue,
   }: {
     debounceValue: string;
   }) => {
-    const current = getAllParam();
-    const currentObj = Object.fromEntries(current.entries());
+    // const current = getAllParam();
+    // const currentObj = Object.fromEntries(current.entries());
 
     setManyParam({
-      ...currentObj,
+      page: "1",
+      limit: "10",
       search: debounceValue,
     });
   };

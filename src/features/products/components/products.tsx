@@ -1,4 +1,4 @@
-import ProductComponent from "@/features/app/components/produtc";
+import ProductComponent from "@/features/products/components/product";
 import ProductSkeleton from "@/features/others/skeleton";
 import type { ProductsResponse } from "@/types/types";
 

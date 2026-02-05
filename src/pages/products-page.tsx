@@ -7,7 +7,7 @@ import useGetProducts from "@/features/products/api/use-get-products";
 import FooterComponent from "@/features/products/components/footer";
 import EmptyComponent from "@/features/products/components/empty";
 
-const ProductPage = () => {
+const ProductsPage = () => {
   const { getParam } = useParamsControllers();
   const accessToken = localStorage.getItem("access-token");
 
@@ -35,6 +35,7 @@ const ProductPage = () => {
     isError: isErrorGetProducts,
   } = useGetProducts({ query, accessToken });
 
+  console.info(dataGetProducts);
   return (
     <>
       <HeaderComponent />
@@ -64,4 +65,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default ProductsPage;

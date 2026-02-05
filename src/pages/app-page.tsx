@@ -4,7 +4,7 @@ import useGetUser from "@/features/app/api/use-get-user";
 import CarouselComponent from "@/features/app/components/carousel";
 import HeaderComponent from "@/features/app/components/header-products";
 import NavigationComponent from "@/features/app/components/navbar";
-import ProductComponent from "@/features/app/components/produtc";
+import ProductComponent from "@/features/app/components/product";
 import ErrorComponent from "@/features/others/error";
 import LoadingComponent from "@/features/others/loading";
 import ProductSkeleton from "@/features/others/skeleton";
@@ -26,6 +26,7 @@ const AppPage = () => {
     isError: isErrorGetProducts,
   } = useGetProducts({ limit: 10, skip: 0, accessToken });
 
+  console.info(dataGetProducts);
   return (
     <>
       {loadingGetUser ? (

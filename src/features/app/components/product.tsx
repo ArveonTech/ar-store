@@ -12,7 +12,7 @@ const ProductComponent = ({ product }: PropsProduct) => {
   const navigate = useNavigate();
 
   const handleSourceClickToProduct = ({ productId }: { productId: number }) => {
-    dispatch(setSource("products"));
+    dispatch(setSource("app"));
     navigate(`/product/${productId}`);
   };
 
