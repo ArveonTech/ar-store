@@ -8,6 +8,7 @@ import AppPage from "./pages/app-page";
 import NotFoundPage from "./pages/not-found-page";
 import ProductsPage from "./pages/products-page";
 import ProductPage from "./pages/product-page";
+import CartPage from "./pages/cart-page";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +50,14 @@ const router = createBrowserRouter([
     element: (
       <ProtectedRoute>
         <ProductPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/cart",
+    element: (
+      <ProtectedRoute>
+        <CartPage />
       </ProtectedRoute>
     ),
   },

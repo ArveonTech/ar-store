@@ -63,16 +63,17 @@ const MainComponent = ({ product }: PropsProductComponent) => {
                 <span>{product?.stock}</span>
               </li>
             </ul>
-            <p className="text-justify">
-             {product?.description}
-            </p>
+            <p className="text-justify">{product?.description}</p>
           </>
         ) : (
           <>
             <ul>
               <li>
                 <span className="text-muted-foreground">Dimensions: </span>
-                <span>{product?.dimensions.width} x {product?.dimensions.height} x {product?.dimensions.depth}</span>
+                <span>
+                  {product?.dimensions.width} x {product?.dimensions.height} x{" "}
+                  {product?.dimensions.depth}
+                </span>
               </li>
               <li>
                 <span className="text-muted-foreground">Weight: </span>
