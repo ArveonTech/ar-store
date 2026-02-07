@@ -70,7 +70,7 @@ const FooterComponent = () => {
 
         {/* Bottom */}
         <div className="flex flex-col items-center justify-between gap-6 text-xs  md:flex-row">
-          <p>© ArStore. ALL RIGHTS RESERVED.</p>
+          <p>© ArqiStore. ALL RIGHTS RESERVED.</p>
         </div>
       </div>
     </section>

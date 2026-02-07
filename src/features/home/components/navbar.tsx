@@ -36,7 +36,7 @@ const NavigationComponent = () => {
       <div className="flex items-center gap-3">
         <img src="./logo/logo.png" className="w-8" />
         <h1 className="font-JetBrains text-xl">
-          <a href="/">ArStore</a>
+          <a href="/">ArqiStore</a>
         </h1>
       </div>
 
