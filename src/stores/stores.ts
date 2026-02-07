@@ -10,9 +10,5 @@ export const store = configureStore({
   },
 });
 
-store.subscribe(() => {
-  console.info(store.getState().sourceSlice);
-});
-
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
