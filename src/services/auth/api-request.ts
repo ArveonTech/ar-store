@@ -22,8 +22,6 @@ export const apiRequest = async (
 
     return response.data;
   } catch (error: unknown) {
-    console.info(error);
-
     if (typeof error === "object" && error !== null && "response" in error) {
       const err = error as {
         response?: {

@@ -11,7 +11,7 @@ const HeaderComponent = () => {
   return (
     <header className="mt-10 px-15">
       <div
-        className="bg-accent w-fit rounded-full p-2 animate-bounce cursor-pointer"
+        className="bg-accent w-fit rounded-full p-2 cursor-pointer"
         onClick={() => handleSourceBackProduct()}
       >
         <ArrowLeft />

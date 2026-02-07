@@ -35,7 +35,6 @@ const ProductsPage = () => {
     isError: isErrorGetProducts,
   } = useGetProducts({ query, accessToken });
 
-  console.info(dataGetProducts);
   return (
     <>
       <HeaderComponent />

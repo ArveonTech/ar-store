@@ -1,13 +1,12 @@
-import { ArrowLeft, ShoppingCart } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
-import { useAppSelector } from "@/stores/hook";
+import { ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { ModeToggle } from "./mode-toggle";
 
 const HeaderComponent = () => {
-  const sourceLink = useAppSelector((state) => state.sourceSlice);
   const navigate = useNavigate();
 
   const handleSourceBackProduct = () => {
-    navigate(`/${sourceLink}`);
+    navigate(`/app`);
   };
 
   return (
@@ -18,12 +17,8 @@ const HeaderComponent = () => {
       >
         <ArrowLeft />
       </div>
-      <Link
-        to={`/cart`}
-        className="bg-accent w-fit rounded-full p-2 cursor-pointer"
-      >
-        <ShoppingCart />
-      </Link>
+      <h1>Profile</h1>
+      <ModeToggle />
     </header>
   );
 };

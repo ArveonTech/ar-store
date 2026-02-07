@@ -7,9 +7,7 @@ import FooterComponent from "@/features/home/components/contact";
 const HomePage = () => {
   return (
     <>
-      <header>
-        <NavigationComponent />
-      </header>
+      <NavigationComponent />
       <main>
         <HeroComponent />
         <HighlightComponent />

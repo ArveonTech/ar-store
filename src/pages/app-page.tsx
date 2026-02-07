@@ -26,7 +26,6 @@ const AppPage = () => {
     isError: isErrorGetProducts,
   } = useGetProducts({ limit: 10, skip: 0, accessToken });
 
-  console.info(dataGetProducts);
   return (
     <>
       {loadingGetUser ? (

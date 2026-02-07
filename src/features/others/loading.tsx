@@ -8,7 +8,7 @@ const LoadingComponent = ({ classname }: { classname?: string }) => {
         classname,
       )}
     >
-      <div className="h-10 w-10 animate-spin rounded-full border-4 border-muted border-t-black" />
+      <div className="h-10 w-10 animate-spin rounded-full border-4 border-accent border-t-black" />
       <p className="text-sm text-muted-foreground">Loading...</p>
     </div>
   );

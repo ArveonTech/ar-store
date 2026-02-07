@@ -3,6 +3,10 @@ import CartItem from "@/features/cart/components/cart-item";
 import HeaderComponent from "@/features/cart/components/header";
 import type { Cart } from "@/types/types";
 import EmptyCart from "@/features/cart/components/empty";
+import FooterComponent from "@/features/cart/components/footer";
+import { clearCart } from "@/features/cart/utils/cart";
+import { Toaster } from "@/components/ui/sonner";
+import { toast } from "sonner";
 
 const CartPage = () => {
   const [cart, setCart] = useState<Cart[]>(() => {
@@ -43,6 +47,12 @@ const CartPage = () => {
     setCart((prev) => prev.filter((item) => item.id !== id));
   };
 
+  const handleCheckout = () => {
+    clearCart();
+    setCart([]);
+    toast.success("Successful product checkout");
+  };
+
   return (
     <>
       <HeaderComponent />
@@ -50,18 +60,22 @@ const CartPage = () => {
       {cart.length === 0 ? (
         <EmptyCart />
       ) : (
-        <section className="grid grid-cols-2 lg:grid-cols-4 gap-4 px-15 mt-20">
-          {cart.map((item) => (
-            <CartItem
-              key={item.id}
-              product={item}
-              onPlus={handlePlus}
-              onMinus={handleMinus}
-              onRemove={handleRemove}
-            />
-          ))}
-        </section>
+        <>
+          <section className="grid grid-cols-2 lg:grid-cols-4 gap-4 px-15 mt-20">
+            {cart.map((item) => (
+              <CartItem
+                key={item.id}
+                product={item}
+                onPlus={handlePlus}
+                onMinus={handleMinus}
+                onRemove={handleRemove}
+              />
+            ))}
+          </section>
+          <FooterComponent cart={cart} onCheckout={handleCheckout} />
+        </>
       )}
+      <Toaster position="top-center" richColors />
     </>
   );
 };

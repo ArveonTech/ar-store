@@ -32,9 +32,9 @@ const NavigationComponent = () => {
   }, []);
 
   return (
-    <nav className="bg-sidebar h-16 px-10 flex justify-between items-center sticky top-0 z-20 border border-b-sidebar-border text-sidebar-foreground">
+    <nav className="bg-sidebar h-16 px-10 flex justify-between items-center sticky top-0 z-20 border border-none border-b-sidebar-border text-sidebar-foreground shadow">
       <div className="flex items-center gap-3">
-        <img src="./logo/arstore.jpg" className="w-8" />
+        <img src="./logo/logo.png" className="w-8" />
         <h1 className="font-JetBrains text-xl">
           <a href="/">ArStore</a>
         </h1>

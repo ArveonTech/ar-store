@@ -22,7 +22,7 @@ const CartItem = ({ product, onPlus, onMinus, onRemove }: PropsCartItem) => {
           <h2 className="font-medium line-clamp-1">{product.title}</h2>
           <button
             onClick={() => onRemove(product.id)}
-            className="bg-destructive p-1 rounded"
+            className="bg-destructive p-1 rounded cursor-pointer"
           >
             <Trash size={16} color="#fff" />
           </button>
@@ -31,7 +31,7 @@ const CartItem = ({ product, onPlus, onMinus, onRemove }: PropsCartItem) => {
         <div className="flex items-center gap-2 justify-end">
           <button
             onClick={() => onMinus(product.id)}
-            className="p-1 border rounded"
+            className="p-1 border rounded cursor-pointer"
           >
             <Minus size={16} />
           </button>
@@ -40,7 +40,7 @@ const CartItem = ({ product, onPlus, onMinus, onRemove }: PropsCartItem) => {
 
           <button
             onClick={() => onPlus(product.id)}
-            className="p-1 border rounded"
+            className="p-1 border rounded cursor-pointer"
           >
             <Plus size={16} />
           </button>

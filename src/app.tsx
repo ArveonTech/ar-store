@@ -9,6 +9,8 @@ import NotFoundPage from "./pages/not-found-page";
 import ProductsPage from "./pages/products-page";
 import ProductPage from "./pages/product-page";
 import CartPage from "./pages/cart-page";
+import ProfilePage from "./pages/profie-page";
+import { ThemeProvider } from "./features/others/theme-provider";
 
 const queryClient = new QueryClient();
 
@@ -62,6 +64,14 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/profile",
+    element: (
+      <ProtectedRoute>
+        <ProfilePage />
+      </ProtectedRoute>
+    ),
+  },
+  {
     path: "*",
     element: <NotFoundPage />,
   },
@@ -69,9 +79,11 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 }
 

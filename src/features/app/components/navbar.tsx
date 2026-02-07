@@ -10,7 +10,7 @@ const NavigationComponent = ({ dataUser }: PropsNavigationComponent) => {
     <>
       <nav className="bg-sidebar h-16 px-10 flex justify-between items-center sticky top-0 z-10">
         <div className="flex items-center gap-3">
-          <img src="./logo/arstore.jpg" className="w-8" />
+          <img src="./logo/logo.png" className="w-8" />
           <h1 className="font-JetBrains text-xl hidden sm:block">
             <a href="/app">MonTrackr</a>
           </h1>

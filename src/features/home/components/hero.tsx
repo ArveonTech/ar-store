@@ -9,7 +9,7 @@ const HeroComponent = () => {
           alt="hero-image"
           className="h-full w-full object-cover object-top"
         />
-        <div className="absolute z-10 top-0 h-full w-full bg-linear-to-r from-white via-white via-30% to-transparent ">
+        <div className="absolute z-10 top-0 h-full w-full bg-linear-to-r from-background via-background via-30% to-transparent ">
           <div className="flex justify-center flex-col h-full mx-10 space-y-2">
             <h1 className="text-2xl font-semibold font-merriweather">
               Discover Everyday Essentials
