@@ -36,7 +36,7 @@ const ProductPage = () => {
 
   return (
     <div className="mb-20 relative">
-      <HeaderComponent />
+      <HeaderComponent product={dataGetProduct} />
       {loadingGetProduct ? (
         <LoadingComponent classname={"mt-50"} />
       ) : (

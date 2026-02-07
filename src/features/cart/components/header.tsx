@@ -1,11 +1,19 @@
+import { removeSource } from "@/features/others/store/source-slice";
+import { useAppSelector } from "@/stores/hook";
 import { ArrowLeft } from "lucide-react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const HeaderComponent = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const sourceLink = useAppSelector((state) => state.sourceSlice);
 
   const handleSourceBackProduct = () => {
-    navigate(`/app`);
+    const lastIndex = sourceLink.length - 1;
+    const lastItem = sourceLink[lastIndex] ? sourceLink[lastIndex] : "app";
+    dispatch(removeSource(`${lastItem}`));
+    navigate(`/${lastItem}`);
   };
 
   return (

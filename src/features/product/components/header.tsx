@@ -1,13 +1,26 @@
 import { ArrowLeft, ShoppingCart } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "@/stores/hook";
+import { removeSource, setSource } from "@/features/others/store/source-slice";
+import type { Product } from "@/types/types";
+import { useDispatch } from "react-redux";
 
-const HeaderComponent = () => {
+const HeaderComponent = ({ product }: { product?: Product }) => {
+  const dispatch = useDispatch();
   const sourceLink = useAppSelector((state) => state.sourceSlice);
   const navigate = useNavigate();
 
   const handleSourceBackProduct = () => {
-    navigate(`/${sourceLink}`);
+    const lastIndex = sourceLink.length - 1;
+    const lastItem = sourceLink[lastIndex] ? sourceLink[lastIndex] : "app";
+    dispatch(removeSource(`${lastItem}`));
+    navigate(`/${lastItem}`);
+  };
+
+  const handleToCart = () => {
+    const urlSource: string = product?.id ? `product/${product?.id}` : "app";
+    dispatch(setSource(urlSource));
+    navigate(`/cart`);
   };
 
   return (
@@ -18,12 +31,12 @@ const HeaderComponent = () => {
       >
         <ArrowLeft />
       </div>
-      <Link
-        to={`/cart`}
+      <div
         className="bg-accent w-fit rounded-full p-2 cursor-pointer"
+        onClick={() => handleToCart()}
       >
         <ShoppingCart />
-      </Link>
+      </div>
     </header>
   );
 };

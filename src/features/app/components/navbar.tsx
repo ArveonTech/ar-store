@@ -12,7 +12,7 @@ const NavigationComponent = ({ dataUser }: PropsNavigationComponent) => {
         <div className="flex items-center gap-3">
           <img src="./logo/logo.png" className="w-8" />
           <h1 className="font-JetBrains text-xl hidden sm:block">
-            <a href="/app">MonTrackr</a>
+            <a href="/app">ArStore</a>
           </h1>
         </div>
 
